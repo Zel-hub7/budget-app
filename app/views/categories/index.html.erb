@@ -7,9 +7,11 @@
 <ul>
   <% @categories.each do |category| %>
     <li>
-      <strong><%= category.name %></strong>
-      <img src="<%= category.icon %>" alt="<%= category.name %> Icon">
-      <%# Total Amount: <%= category.total_amount %> 
+      <%= link_to category.name, category_path(category) do %>
+        <strong><%= category.name %></strong>
+        <img src="<%= category.icon %>" alt="<%= category.name %> Icon">
+        <%# Total Amount: <%= category.total_amount %> 
+      <% end %>
     </li>
   <% end %>
 </ul>
