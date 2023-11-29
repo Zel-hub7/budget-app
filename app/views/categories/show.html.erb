@@ -1,10 +1,20 @@
-<p style="color: green"><%= notice %></p>
+<!-- app/views/categories/show.html.erb -->
 
-<%= render @category %>
+<h1><%= @category.name %></h1>
 
-<div>
-  <%= link_to "Edit this category", edit_category_path(@category) %> |
-  <%= link_to "Back to categories", categories_path %>
+<h2>Transactions</h2>
+<ul>
+  <% @category.items.each do |item| %>
+    <li>
+      <strong><%= item.name %></strong>
+      Amount: <%= item.amount %>
+      <!-- Display other item details as needed -->
+    </li>
+  <% end %>
+</ul>
+</ul>
+<!-- Display category details and other information -->
 
-  <%= button_to "Destroy this category", @category, method: :delete %>
-</div>
+<%# <%= link_to "Add Transaction", new_category_item_path(@category), class: "btn btn-primary" %>
+
+<!-- Display other content as needed -->
