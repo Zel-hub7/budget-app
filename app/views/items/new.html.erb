@@ -1,9 +1,15 @@
-<h1>New item</h1>
+<%= form_with(model: [@category, @item], url: category_items_path(@category), method: :post) do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
 
-<%= render "form", item: @item %>
+  <div>
+    <%= form.label :amount %>
+    <%= form.number_field :amount %>
+  </div>
 
-<br>
-
-<div>
-  <%= link_to "Back to items", items_path %>
-</div>
+  <div>
+    <%= form.submit 'Create Item' %>
+  </div>
+<% end %>
