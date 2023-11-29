@@ -1,14 +1,15 @@
-<p style="color: green"><%= notice %></p>
+<!-- app/views/home/index.html.erb -->
 
-<h1>Categories</h1>
+<h1>Welcome <%= current_user.name %>!</h1>
+<%= button_to 'Log out', destroy_user_session_path, method: :delete %>
 
-<div id="categories">
+<h2>Your Categories</h2>
+<ul>
   <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
+    <li>
+      <strong><%= category.name %></strong>
+      <img src="<%= category.icon %>" alt="<%= category.name %> Icon">
+      <%# Total Amount: <%= category.total_amount %> 
+    </li>
   <% end %>
-</div>
-
-<%= link_to "New category", new_category_path %>
+</ul>

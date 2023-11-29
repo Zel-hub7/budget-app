@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories or /categories.json
   def index
-    @categories = Category.all
+    @categories = current_user.categories
   end
 
   # GET /categories/1 or /categories/1.json
@@ -21,8 +21,8 @@ class CategoriesController < ApplicationController
 
   # POST /categories or /categories.json
   def create
-    @category = Category.new(category_params)
-
+    @category = current_user.categories.build(category_params)
+  
     respond_to do |format|
       if @category.save
         format.html { redirect_to category_url(@category), notice: "Category was successfully created." }
@@ -33,6 +33,7 @@ class CategoriesController < ApplicationController
       end
     end
   end
+  
 
   # PATCH/PUT /categories/1 or /categories/1.json
   def update
@@ -65,6 +66,6 @@ class CategoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def category_params
-      params.fetch(:category, {})
+      params.require(:category).permit(:name, :icon, :user_id)
     end
 end
