@@ -2,19 +2,16 @@
 
 <h1><%= @category.name %></h1>
 
+<%= link_to "Add Transaction", new_category_item_path(@category), class: "btn btn-primary" %>
+
 <h2>Transactions</h2>
 <ul>
-  <% @category.items.each do |item| %>
+  <% @items.each do |item| %>
     <li>
       <strong><%= item.name %></strong>
       Amount: <%= item.amount %>
-      <!-- Display other item details as needed -->
     </li>
   <% end %>
 </ul>
-</ul>
-<!-- Display category details and other information -->
 
-<%# <%= link_to "Add Transaction", new_category_item_path(@category), class: "btn btn-primary" %>
-
-<!-- Display other content as needed -->
+<%= link_to 'Back', categories_path %>

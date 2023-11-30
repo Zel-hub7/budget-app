@@ -6,9 +6,19 @@ class CategoriesController < ApplicationController
     @categories = current_user.categories
   end
 
-  # GET /categories/1 or /categories/1.json
+# app/controllers/categories_controller.rb
   def show
+    @category = Category.find(params[:id])
+    @items = @category.items
+
+    # Add this line for more detailed SQL output
+    puts "SQL Query for items: #{ActiveRecord::Base.connection.exec_query(@items.to_sql).to_a.inspect}"
+
+    # ...
   end
+
+
+
 
   # GET /categories/new
   def new
