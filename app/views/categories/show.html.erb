@@ -1,13 +1,17 @@
 <!-- app/views/categories/show.html.erb -->
-<div class = "navbars">
-    <%= link_to '<-', categories_path, class: "back" %>
-    <h1><%= @category.name %></h1>
+<div class="navbars">
+  <%= link_to '<-', categories_path, class: "back" %>
+  <h1><%= @category.name %></h1>
 </div>
-<h2>Transactions</h2>
-<ul class = "cat-cont">
+
+<h2 class="text-center mt-3">Transactions</h2>
+
+<ul class="cat-cont">
   <% @items.each do |item| %>
-    <li class = "lists"><%= item.name %> - Amount: <%= item.amount %></li>
+    <li class="lists"><%= item.name %> - Amount: <%= item.amount %></li>
   <% end %>
 </ul>
-<%= link_to "Add Transaction", new_category_item_path(@category), class: "btn btn-primary" %>
 
+<div class="fixed-bottom bg-success p-3">
+  <%= link_to "Add Transaction", new_category_item_path(@category), class: "btn btn-block text-white" %>
+</div>

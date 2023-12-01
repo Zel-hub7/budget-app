@@ -11,7 +11,6 @@
     background-color: rgb(9, 108, 221);
     margin-top: -57px;
     color: white;
-    
 }
 
 .log-out {
@@ -20,6 +19,7 @@
     border-radius: 5px;
     color: white;
     border: none;
+    margin-right: 10px;
 }
 .cat-cont {
     display: flex;
@@ -50,4 +50,8 @@
     color: white;
     font-size: 35px;
     font-weight: bolder;
+}
+.fixed-bottom a {
+    border: solid white 1px;
+    width: 100%;
 }
