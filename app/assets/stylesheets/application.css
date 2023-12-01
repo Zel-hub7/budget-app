@@ -24,6 +24,8 @@
 .cat-cont {
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
+    height: 100vh;
 }
 .lists {
     background-color: rgb(217, 218, 219);

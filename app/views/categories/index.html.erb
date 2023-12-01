@@ -1,17 +1,25 @@
-<!-- app/views/home/index.html.erb -->
-
-<h1>Welcome <%= current_user.name %>!</h1>
-<%= button_to 'Log out', destroy_user_session_path, method: :delete %>
-
-<h2>Your Categories</h2>
-<ul>
-  <% @categories.each do |category| %>
-    <li>
-      <%= link_to category.name, category_path(category) do %>
-        <strong><%= category.name %></strong>
-        <img src="<%= category.icon %>" alt="<%= category.name %> Icon">
-        <%# Total Amount: <%= category.total_amount %> 
+<p class="navbar-text float-right">
+  <% if user_signed_in? %>
+   <div class = "navbar">
+      <h2>Categories</h2>
+      <%= button_to 'Log out', destroy_user_session_path, method: :delete, class: 'log-out' %>
+    </div>
+    <ul class = "cat-cont">
+      <% @categories.each do |category| %>
+        <li class = "lists">
+          <%= link_to category_path(category) do %>
+            <strong><%= category.name %></strong>
+            <img src="<%= category.icon %>" alt="<%= category.name %> Icon">
+            Total Amount: <%= category.total_price %> 
+          <% end %>
+        </li>
       <% end %>
-    </li>
+    </ul>
+  <div class = "fixed-bottom bg-success p-3">
+    <%= link_to "Add New Category", new_category_path, class: "btn btn-success btn-block mt-2 text-white" %>
+  </div>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path, class: "navbar-link"  %> |
+    <%= link_to "Login", new_user_session_path, class: "navbar-link"  %>
   <% end %>
-</ul>
+</p>
