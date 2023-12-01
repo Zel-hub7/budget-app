@@ -13,7 +13,8 @@
           <%= link_to category_path(category) do %>
             <strong><%= category.name %></strong>
             <img src="<%= category.icon %>" alt="<%= category.name %> Icon">
-            <%# Total Amount: <%= category.total_amount %> 
+            <!-- Display Total Amount -->
+            Total Amount: <%= category.total_price %> 
           <% end %>
         </li>
       <% end %>
