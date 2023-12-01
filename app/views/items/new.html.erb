@@ -1,15 +1,18 @@
-<%= form_with(model: [@category, @item], url: category_items_path(@category), method: :post) do |form| %>
+<!-- views/items/new.html.erb -->
+<h1>Add a New Item for <%= @category.name %> Category</h1>
+
+<%= form_tag(category_items_path(@category)) do %>
   <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= label_tag 'item_name', 'Name' %>
+    <%= text_field_tag 'item[name]' %>
   </div>
 
   <div>
-    <%= form.label :amount %>
-    <%= form.number_field :amount %>
+    <%= label_tag 'item_amount', 'Amount' %>
+    <%= number_field_tag 'item[amount]' %>
   </div>
 
   <div>
-    <%= form.submit 'Create Item' %>
+    <%= submit_tag 'Create Item' %>
   </div>
 <% end %>

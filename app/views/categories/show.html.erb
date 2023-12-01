@@ -7,10 +7,7 @@
 <h2>Transactions</h2>
 <ul>
   <% @items.each do |item| %>
-    <li>
-      <strong><%= item.name %></strong>
-      Amount: <%= item.amount %>
-    </li>
+    <li><%= item.name %> - Amount: <%= item.amount %></li>
   <% end %>
 </ul>
 

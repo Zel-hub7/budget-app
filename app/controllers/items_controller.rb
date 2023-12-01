@@ -3,7 +3,8 @@ class ItemsController < ApplicationController
   before_action :set_category, only: [:new, :create, :show]
 
   def new
-    @item = @category.items.build
+    @category = Category.includes(:user).find_by(id: params[:category_id])
+    @item = Item.new
   end
 
   def show
@@ -11,14 +12,17 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = @category.items.build(item_params)
-    @item.author_id = current_user.id
+    @category = Category.includes(:user).find_by(id: params[:category_id])
+    @item = Item.new(items_params)
+    @item.author = current_user
 
     if @item.save
-      redirect_to category_path(@category), notice: 'Item was successfully created.'
+      @item.categories << Category.find(params[:category_id])
+      flash[:notice] = 'Created successfully'
     else
-      render :new
+      flash[:alert] = 'Failed to create'
     end
+    redirect_to category_path(@category)
   end
 
   private
@@ -27,7 +31,7 @@ class ItemsController < ApplicationController
     @category = Category.find(params[:category_id])
   end
 
-  def item_params
+  def items_params
     params.require(:item).permit(:name, :amount)
   end
 end
