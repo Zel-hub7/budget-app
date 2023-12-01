@@ -2,13 +2,6 @@ body {
     background-color: #f8f9fa;
   }
 
-/* .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-} */
-
 .form-signup-box {
     max-width: 1000px;
     padding: 20px;
