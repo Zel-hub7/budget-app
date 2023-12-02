@@ -57,3 +57,13 @@
     border: solid white 1px;
     width: 100%;
 }
+.list-cat {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.category-container {
+    display: flex;
+    justify-content: space-between;
+}

@@ -66,7 +66,12 @@ class CategoriesController < ApplicationController
     end
 
     # Only allow a list of trusted parameters through.
+# app/controllers/categories_controller.rb
     def category_params
-      params.require(:category).permit(:name, :icon, :user_id)
+      icon_name = params.require(:category).fetch(:icon, '')
+      icon_link = Category::ICONS[icon_name]
+
+      params.require(:category).permit(:name, :user_id).merge(icon: icon_link)
     end
+
 end

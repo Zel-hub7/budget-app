@@ -4,17 +4,26 @@
       <h2>Categories</h2>
       <%= button_to 'Log out', destroy_user_session_path, method: :delete, class: 'log-out' %>
     </div>
-    <ul class = "cat-cont">
-      <% @categories.each do |category| %>
-        <li class = "lists">
-          <%= link_to category_path(category) do %>
-            <strong><%= category.name %></strong>
-            <img src="<%= category.icon %>" alt="<%= category.name %> Icon">
-            Total Amount: <%= category.total_price %> 
-          <% end %>
-        </li>
-      <% end %>
-    </ul>
+      <ul class="cat-cont">
+        <% @categories.each do |category| %>
+          <li class="lists list-cat">
+            <%= link_to category_path(category) do %>
+              <div class="category-container">
+                <div class="icon-container">
+                  <img src="<%= category.icon %>" alt="<%= category.name %> Icon" class="img-fluid mr-3" style="max-width: 50px;">
+                </div>
+                <div class="text-container">
+                  <strong><%= category.name %></strong>
+                </div>
+                <div class="price-container">
+                  Total Amount: <%= category.total_price %>
+                </div>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+
   <div class = "fixed-bottom bg-success p-3">
     <%= link_to "Add New Category", new_category_path, class: "btn btn-success btn-block mt-2 text-white" %>
   </div>
