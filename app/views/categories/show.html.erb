@@ -13,6 +13,9 @@
         <%= item.name %>
       </div>
       <div>
+        <%= item.created_at.strftime("%d %b, %Y") %>
+      </div>
+      <div>
         $<%= item.amount %>
       </div>    
     </li>
