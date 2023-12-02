@@ -75,3 +75,28 @@ body {
     flex-direction: row;
     justify-content: space-between;
 }
+
+.splash-screen {
+    text-align: center;
+    padding: 50px;
+  }
+  
+.splash-screen h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+  
+.splash-screen p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+  
+.splash-screen .links {
+    display: flex;
+    justify-content: center;
+}
+  
+.splash-screen .btn {
+    margin: 0 10px;
+}
+  
