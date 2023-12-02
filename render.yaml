@@ -2,6 +2,9 @@ databases:
   - name: mysite
     databaseName: budget_app_production
     user: postgres
+    password: 1234
+    connectionPool:
+      max: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 services:
   - type: web
