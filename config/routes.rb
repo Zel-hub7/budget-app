@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
 
   unauthenticated do
-    root to: 'splash#index'
+    root to: 'splash#index', as: :unauthenticated_root
   end
 
   resources :categories do
