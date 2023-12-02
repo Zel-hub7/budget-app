@@ -3,6 +3,8 @@ class Category < ApplicationRecord
     has_many :payments, dependent: :destroy
     has_many :items, through: :payments
 
+    validates :name, :icon, presence: true
+
     def total_price
         items.sum(:amount)
     end
