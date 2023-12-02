@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user! # Ensure the user is signed in
-  before_action :set_category, only: [:new, :create, :show]
+  before_action :set_category, only: %i[new create show]
 
   def new
     @category = Category.includes(:user).find_by(id: params[:category_id])

@@ -15,7 +15,7 @@ RSpec.describe 'categories', type: :feature do
 
   context 'index page' do
     it 'displays the "Add Category" link' do
-        expect(page).to have_link('Add New Category', href: new_category_path)
+      expect(page).to have_link('Add New Category', href: new_category_path)
     end
   end
 
