@@ -8,7 +8,14 @@
 
 <ul class="cat-cont">
   <% @items.each do |item| %>
-    <li class="lists"><%= item.name %> - Amount: <%= item.amount %></li>
+    <li class="lists ls">
+      <div>
+        <%= item.name %>
+      </div>
+      <div>
+        $<%= item.amount %>
+      </div>    
+    </li>
   <% end %>
 </ul>
 

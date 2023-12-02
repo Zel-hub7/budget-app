@@ -3,8 +3,11 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
-}
 
+}
+body {
+    overflow-y: auto;
+}
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -65,5 +68,10 @@
 
 .category-container {
     display: flex;
+    justify-content: space-between;
+}
+.ls {
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
 }
