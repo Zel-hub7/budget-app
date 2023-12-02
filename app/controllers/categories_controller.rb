@@ -65,8 +65,6 @@ class CategoriesController < ApplicationController
       @category = Category.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
-# app/controllers/categories_controller.rb
     def category_params
       icon_name = params.require(:category).fetch(:icon, '')
       icon_link = Category::ICONS[icon_name]

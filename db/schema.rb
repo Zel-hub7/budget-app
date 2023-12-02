@@ -35,8 +35,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_27_141603) do
   create_table "payments", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "category_id", null: false
     t.bigint "item_id", null: false
+    t.bigint "category_id", null: false
     t.index ["category_id"], name: "index_payments_on_category_id"
     t.index ["item_id"], name: "index_payments_on_item_id"
   end
