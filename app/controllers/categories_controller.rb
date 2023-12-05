@@ -22,10 +22,16 @@ class CategoriesController < ApplicationController
   # POST /categories or /categories.json
   def create
     @category = current_user.categories.build(category_params)
-
+  
     respond_to do |format|
       if @category.save
-        format.html { redirect_to root_path, notice: 'Category was successfully created.' }
+        format.html do
+          if user_signed_in?
+            redirect_to authenticated_root_path, notice: 'Category was successfully created.'
+          else
+            redirect_to unauthenticated_root_path, notice: 'Category was successfully created.'
+          end
+        end
         format.json { render :show, status: :created, location: @category }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -33,6 +39,7 @@ class CategoriesController < ApplicationController
       end
     end
   end
+  
 
   # PATCH/PUT /categories/1 or /categories/1.json
   def update
