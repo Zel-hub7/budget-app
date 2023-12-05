@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AdditemrIdToCategories < ActiveRecord::Migration[7.1]
   def change
     add_reference :payments, :item, null: false, foreign_key: true
