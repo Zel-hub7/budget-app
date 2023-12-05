@@ -8,4 +8,4 @@ RSpec.describe 'splash page', type: :feature do
       expect(page).to have_content('Budget Tracker')
     end
   end
-ends
+end
