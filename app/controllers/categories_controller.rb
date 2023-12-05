@@ -22,7 +22,7 @@ class CategoriesController < ApplicationController
   # POST /categories or /categories.json
   def create
     @category = current_user.categories.build(category_params)
-  
+
     respond_to do |format|
       if @category.save
         format.html do
@@ -39,7 +39,6 @@ class CategoriesController < ApplicationController
       end
     end
   end
-  
 
   # PATCH/PUT /categories/1 or /categories/1.json
   def update
