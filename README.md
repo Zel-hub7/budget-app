@@ -162,3 +162,17 @@ If you like this project please show support by staring ⭐️.
 * I am grateful to [Gregoire Vella on Behance](https://www.behance.net/gregoirevella) for the priviledge to use his design.
 
 * I would like to thank my Microverse team and my coding partners for their support and guidance.
+
+## Presentation <a name="presentation"></a>
+
+* [video](https://www.loom.com/share/c4a5aade9b284de09a2da4c5c1601b88?sid=a8d493aa-9f0e-486a-b071-ce1b5c5adf43) presentation.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
