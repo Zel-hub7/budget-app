@@ -1,19 +1,18 @@
 <!-- app/views/categories/show.html.erb -->
 <div class="navbars">
   <%= link_to '<-', categories_path, class: "back" %>
+  <h2 class="text-center mt-3">Transactions</h2>
   <% total_amount = 0 %>
   <% @items.each do |item| %>
     <% total_amount += item.amount %>
   <% end %>
 
-  <div class="total-amount">
-    <p>Total Amount: $<%= total_amount %></p>
-  </div>
-
   <h1><%= @category.name %></h1>
 </div>
 
-<h2 class="text-center mt-3">Transactions</h2>
+<div class="total-amount">
+  <p class = "text-center">Total Amount: $<%= total_amount %></p>
+</div>
 
 <ul class="cat-cont">
   <% @items.each do |item| %>
