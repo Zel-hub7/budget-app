@@ -1,4 +1,5 @@
 <div class="container mt-5">
+  <%= link_to 'Back', authenticated_root_path, class: 'goback' %>
   <h1 class="text-center mb-4">Add a New Item for <%= @category.name %> Category</h1>
 
   <%= form_tag(category_items_path(@category), class: 'needs-validation', novalidate: true) do %>

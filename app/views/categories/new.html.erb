@@ -1,4 +1,5 @@
 <div class="container mt-5">
+  <%= link_to 'Back', authenticated_root_path, class: 'goback' %> 
   <h1 class="mb-4">New Category</h1>
 
   <%= form_for @category, html: { class: 'needs-validation', novalidate: true } do |f| %>

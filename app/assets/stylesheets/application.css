@@ -105,3 +105,12 @@ body {
   display: flex;
   justify-content: center;
 }
+.goback {
+  border: #096cdd;
+  background-color: #096cdd;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  width: 100%;
+  text-decoration: none;
+}
