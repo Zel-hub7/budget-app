@@ -21,7 +21,6 @@
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
 - [Presentation](#acknowledgements)
-- [Presentation](#presentation)
 - [❓ FAQ](#faq)
 - [📝 License](#license)
 
