@@ -1,0 +1,34 @@
+<p class="navbar-text float-right">
+  <% if user_signed_in? %>
+   <div class = "navbar">
+      <h2>Categories</h2>
+      <%= button_to 'Log out', destroy_user_session_path, method: :delete, class: 'log-out' %>
+    </div>
+      <ul class="cat-cont">
+        <% @categories.each do |category| %>
+          <li class="lists list-cat">
+            <%= link_to category_path(category) do %>
+              <div class="category-container">
+                <div class="icon-container">
+                  <img src="<%= category.icon %>" alt="<%= category.name %> Icon" class="img-fluid mr-3" style="max-width: 50px;">
+                </div>
+                <div class="text-container">
+                  <strong><%= category.name %></strong>
+                </div>
+                <div class="price-container">
+                  $<%= category.total_price %>
+                </div>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+
+  <div class = "fixed-bottom footer p-3">
+    <%= link_to "Add New Category", new_category_path, class: "text-center" %>
+  </div>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path, class: "navbar-link"  %> |
+    <%= link_to "Login", new_user_session_path, class: "navbar-link"  %>
+  <% end %>
+</p>

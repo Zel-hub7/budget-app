@@ -1,0 +1,26 @@
+<div class="container mt-5">
+  <%= link_to 'Back', authenticated_root_path, class: 'goback' %>
+  <h1 class="text-center mb-4">Add a New Item</h1>
+
+  <%= form_tag(category_items_path(@category), class: 'needs-validation', novalidate: true) do %>
+    <div class="mb-3">
+      <%= label_tag 'item_name', 'Name', class: 'form-label' %>
+      <%= text_field_tag 'item[name]', nil, class: 'form-control', required: true %>
+    </div>
+
+    <div class="mb-3">
+      <%= label_tag 'item_amount', 'Amount', class: 'form-label' %>
+      <%= number_field_tag 'item[amount]', nil, class: 'form-control', required: true %>
+    </div>
+
+    <div class="mb-3">
+      <%= label_tag 'item_category', 'Category', class: 'form-label' %>
+      <%= select_tag 'item[category_id]', options_from_collection_for_select(current_user.categories, 'id', 'name'), class: 'form-control', required: true %>
+
+    </div>
+
+    <div class="mb-3">
+      <%= submit_tag 'Create Item', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

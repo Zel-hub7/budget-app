@@ -1,0 +1,35 @@
+<!-- app/views/categories/show.html.erb -->
+<div class="navbars">
+  <%= link_to '<-', categories_path, class: "back" %>
+  <h2 class="text-center mt-3">Transactions</h2>
+  <% total_amount = 0 %>
+  <% @items.each do |item| %>
+    <% total_amount += item.amount %>
+  <% end %>
+
+  <h1><%= @category.name %></h1>
+</div>
+
+<div class="total-amount">
+  <p class = "text-center">Total Amount: $<%= total_amount %></p>
+</div>
+
+<ul class="cat-cont">
+  <% @items.each do |item| %>
+    <li class="lists ls">
+      <div>
+        <%= item.name %>
+      </div>
+      <div>
+        <%= item.created_at.strftime("%d %b, %Y") %>
+      </div>
+      <div>
+        $<%= item.amount %>
+      </div>
+    </li>
+  <% end %>
+</ul>
+
+<div class="fixed-bottom footer p-3">
+  <%= link_to "Add Transaction", new_category_item_path(@category), class: 'text-center' %>
+</div>

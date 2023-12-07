@@ -1,0 +1,21 @@
+<div class="container mt-5">
+  <%= link_to 'Back', authenticated_root_path, class: 'goback' %> 
+  <h1 class="mb-4">New Category</h1>
+
+  <%= form_for @category, html: { class: 'needs-validation', novalidate: true } do |f| %>
+    <div class="mb-3">
+      <%= f.label :name, class: 'form-label' %>
+      <%= f.text_field :name, class: 'form-control', required: true %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :icon, class: 'form-label' %>
+      <%= f.select :icon, Category::ICONS.keys, { include_blank: 'Select an icon' }, class: 'form-select', required: true %>
+    </div>
+
+
+    <div class="mb-3">
+      <%= f.submit "Create Category", class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

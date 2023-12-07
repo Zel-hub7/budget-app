@@ -1,15 +1,129 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  overflow-y: auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(9, 108, 221);
+  margin-top: -57px;
+  color: white;
+}
+
+.log-out {
+  background-color: red;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  margin-right: 10px;
+}
+
+.cat-cont {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.lists {
+  background-color: rgb(217, 218, 219);
+  border: solid rgb(206, 206, 206) 1px;
+  margin: 10px;
+  padding: 25px;
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+.cat-cont a {
+  text-decoration: none;
+}
+
+.navbars {
+  display: flex;
+  justify-content: space-between;
+  background-color: #096cdd;
+  color: white;
+  padding: 10px;
+}
+
+.navbars a {
+  text-decoration: none;
+}
+
+.back {
+  color: white;
+  font-size: 35px;
+  font-weight: bolder;
+}
+
+.fixed-bottom a {
+  border: solid white 1px;
+  width: 100%;
+}
+
+.list-cat {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.category-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.splash-screen {
+  text-align: center;
+  padding: 50px;
+}
+
+.splash-screen h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.splash-screen p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.splash-screen .links {
+  display: flex;
+  justify-content: center;
+}
+
+.goback {
+  border: #096cdd;
+  background-color: #096cdd;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  width: 100%;
+  text-decoration: none;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5fb523;
+}
+
+.footer a {
+  text-decoration: none;
+  color: white;
+}
