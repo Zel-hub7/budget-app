@@ -12,17 +12,18 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @category = Category.includes(:user).find_by(id: params[:category_id])
     @item = Item.new(items_params)
     @item.author = current_user
 
     if @item.save
-      @item.categories << Category.find(params[:category_id])
+      selected_category_id = params[:item][:category_id]
+      @item.categories << Category.find(selected_category_id)
       flash[:notice] = 'Created successfully'
     else
       flash[:alert] = 'Failed to create'
     end
-    redirect_to category_path(@category)
+
+    redirect_to category_path(selected_category_id)
   end
 
   private
