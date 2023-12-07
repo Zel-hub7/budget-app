@@ -85,6 +85,3 @@ test:
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
-  database: budget_app_production
-  username: postgres
-  password: <%= ENV['MY_APP_RENDER_DATABASE_PASSWORD'] %>
