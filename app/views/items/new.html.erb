@@ -15,7 +15,8 @@
 
     <div class="mb-3">
       <%= label_tag 'item_category', 'Category', class: 'form-label' %>
-      <%= select_tag 'item[category_id]', options_from_collection_for_select(Category.all, 'id', 'name'), class: 'form-control', required: true %>
+      <%= select_tag 'item[category_id]', options_from_collection_for_select(current_user.categories, 'id', 'name'), class: 'form-control', required: true %>
+
     </div>
 
     <div class="mb-3">
