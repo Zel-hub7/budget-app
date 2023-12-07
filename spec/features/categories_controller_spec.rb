@@ -28,12 +28,29 @@ RSpec.describe 'categories', type: :feature do
       expect(page).to have_content(item.name)
       expect(page).to have_content(item.created_at.strftime('%d %b, %Y'))
       expect(page).to have_content(item.amount)
+
+      # Add expectations for Total Amount
+      total_amount = category.items.sum(&:amount)
+      expect(page).to have_content("Total Amount: $#{total_amount}")
     end
 
     it 'show page displays the "Add Transaction" link' do
       visit category_path(category)
 
       expect(page).to have_link('Add Transaction', href: new_category_item_path(category))
+    end
+
+    it 'displays the list of items' do
+      category.items << item
+
+      visit category_path(category)
+
+      # Add expectations for each item in the list
+      category.items.each do |item|
+        expect(page).to have_content(item.name)
+        expect(page).to have_content(item.created_at.strftime('%d %b, %Y'))
+        expect(page).to have_content("$#{item.amount}")
+      end
     end
   end
 end
