@@ -26,7 +26,7 @@ RSpec.describe 'categories', type: :feature do
       visit category_path(category)
       expect(page).to have_content(category.name)
       expect(page).to have_content(item.name)
-      expect(page).to have_content(item.created_at.strftime("%d %b, %Y"))
+      expect(page).to have_content(item.created_at.strftime('%d %b, %Y'))
       expect(page).to have_content(item.amount)
     end
 
